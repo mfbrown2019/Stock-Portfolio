@@ -14,10 +14,10 @@ function App() {
     useEffect(() => {
         const interval = setInterval(() => {
             var myHeaders = new Headers();
-            myHeaders.append("APCA-API-KEY-ID", "PKNPVZ48NRX8EQ39UKIS");
+            myHeaders.append("APCA-API-KEY-ID", "");
             myHeaders.append(
                 "APCA-API-SECRET-KEY",
-                "Wit3VNit8dXELdNYfuTMDdZld1ewczuJjx2O8Ufu"
+                ""
             );
 
             var requestOptions = {
