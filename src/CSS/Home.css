@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Home {
+    display: grid;
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    grid-template-rows: 0.05fr 0.75fr 1fr 1fr 0.2fr;
+    grid-template-areas:
+        /* "tape tape tape tape tape tape tape tape" */
+        "... ... ... ... ... ... ... ..."
+        "... ratio ratio ... details details details ..."
+        "... chart chart chart chart position position ..."
+        "... chart chart chart chart position position ..."
+        "... ... ... ... ... ... ... ...";
+    gap: 0.5rem;
+    height: 90vh;
+    background-color: #111;
+}
+
+.navbar {
+    background-color: #111;
+    grid-area: nav;
+    width: 100%;
+    height: 5vh;
+    font-size: 1.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar > * {
+    text-decoration: none;
+    color: white;
+}
+.navbar a:hover {
+    color: lightcoral;
+}
+.chart-home {
+    grid-area: chart;
+}
+.tape {
+    /* grid-area: tape; */
+    background-color: #111;
+    height: 5vh;
+}
+
+.winrate {
+    grid-area: ratio;
+    border-radius: 1rem;
+    height: 100%;
+}
+.details-home {
+    /* background-color: #222; */
+    grid-area: details;
+    border-radius: 1rem;
+    display: grid;
+    color: #fff;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+}
+.positions {
+    /* background-color: #444; */
+    grid-area: position;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    /* padding: 1rem; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 6fr;
+    grid-template-areas:
+        "title"
+        "content";
+    gap: 0.5rem;
+    /* place-items: center; */
+}
+.positions .title {
+    grid-area: title;
+    width: 100%;
+    color: #fff;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    border-bottom: 2px solid green;
+}
+.position-itmes {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+}
+
+.two-home,
+.three-home,
+.four-home,
+.five-home {
+    padding: 0.25rem 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+.two-home {
+    grid-row: 1;
+}
+.three-home {
+    grid-row: 2;
+}
+.four-home {
+    grid-row: 3;
+}
+.five-home {
+    grid-row: 4;
+}
+
+.asset {
+    /* background-color: lightcoral; */
+    width: 100%;
+    /* height: 100%; */
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 0.1fr 0.5fr 1fr 1fr 0.1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        "... tick class side ..."
+        "... tick qty avg_price ..."
+        "... tick market_value unrealized_pl ..."
+        "... tick uip current_price ...";
+    /* place-items: center; */
+    gap: 1rem;
+    border-bottom: 2px solid #555;
+    padding-bottom: 1rem;
+}
+.symbol,
+.class,
+.avg_price,
+.qty,
+.side,
+.value,
+.unrealized_pl,
+.unrealized_interday_pl,
+.price {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.symbol {
+    grid-area: tick;
+}
+.class {
+    grid-area: class;
+}
+.avg_price {
+    grid-area: avg_price;
+}
+.qty {
+    grid-area: qty;
+}
+.side {
+    grid-area: side;
+}
+.value {
+    grid-area: market_value;
+}
+.unrealized_pl {
+    grid-area: unrealized_pl;
+}
+.unrealized_interday_pl {
+    grid-area: uip;
+}
+.price {
+    grid-area: current_price;
+}

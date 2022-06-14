@@ -1,0 +1,129 @@
+.TradePage {
+    background-color: #111;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 0.75fr;
+    grid-template-rows: 0.5fr repeat(2, 1fr) 0.25fr;
+}
+.Panel {
+    grid-column: 3/4;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.chart {
+    grid-column: 1/3;
+    grid-row: 2/5;
+}
+.inputs {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputs > * {
+    font-size: 2rem;
+    padding: 1rem;
+    outline: none;
+    border: none;
+}
+.inputs button:hover {
+    background-color: lightcoral;
+}
+.Panel > * {
+    padding: 1rem;
+    color: lightcoral;
+}
+
+.side-input,
+.type-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    text-align: center;
+}
+
+.one {
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.two {
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.one input,
+.two input {
+    width: 100%;
+    height: 80%;
+}
+.one div,
+.two div {
+    font-size: 2rem;
+}
+
+.symbol-input,
+.qty-input,
+.limit-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.symbol-input > *,
+.qty-input > *,
+.limit-input > * {
+    font-size: 2rem;
+}
+.symbol-input input,
+.qty-input input,
+.limit-input input {
+    width: 40%;
+}
+.center {
+    /* height: 100%;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+.submit-order {
+    font-size: 2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    height: 100%;
+}
+.submit-order:hover {
+    background-color: lightcoral;
+}
+
+.keys {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.keys > * {
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    height: 35%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

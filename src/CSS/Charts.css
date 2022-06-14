@@ -1,0 +1,31 @@
+.ChartPage {
+    background-color: #111;
+}
+.Chart {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.chart1 {
+    grid-column: 1/6;
+    grid-row: 1/4;
+}
+.Screener {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    place-items: center;
+}
+.screen {
+    grid-column: 1/4;
+    grid-row: 1/4;
+}
+
+.MassCharts {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}

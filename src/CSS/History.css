@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.HistoryPage {
+    height: 89vh;
+    padding-top: 1vh;
+    background-color: #111;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr) 0.2fr;
+    grid-template-rows: 0.5fr 0.2fr 6fr;
+    gap: 0.25rem;
+    grid-template-areas:
+        "side date symbol buy sell shares time note submit ..."
+        "... ... ... ...  winners allf losers ... ... ..."
+        "stats stats stats display display display display display display ...";
+}
+
+.history-stats {
+    grid-area: stats;
+    /* background-color: #222; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+}
+.history-stats > * {
+    display: grid;
+    place-items: center;
+    color: white;
+}
+.winnumber {
+    color: green;
+}
+.lossnumber {
+    color: red;
+}
+
+.avgLossLong {
+    font-size: 1.2rem;
+    grid-column: 3/4;
+    grid-row: 7/8;
+}
+.avgLossLongtNumber {
+    font-size: 2.5rem;
+    grid-column: 3/4;
+    grid-row: 8/9;
+    color: red;
+}
+
+.avgWinLong {
+    font-size: 1.2rem;
+    grid-column: 3/4;
+    grid-row: 5/6;
+}
+.avgWinLongtNumber {
+    font-size: 2.5rem;
+    grid-column: 3/4;
+    grid-row: 6/7;
+    color: green;
+}
+
+.avgLossShort {
+    font-size: 1.2rem;
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+.avgLossShortNumber {
+    font-size: 2.5rem;
+    grid-column: 3/4;
+    grid-row: 4/5;
+    color: red;
+}
+
+.avgWinShort {
+    font-size: 1.2rem;
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.avgWinShortNumber {
+    font-size: 2.5rem;
+    grid-column: 3/4;
+    grid-row: 2/3;
+    color: green;
+}
+
+.avgInvestment {
+    font-size: 1.2rem;
+    grid-column: 1/2;
+    grid-row: 9/10;
+}
+.avgInvestmentNumber {
+    font-size: 2.5rem;
+    grid-column: 1/2;
+    grid-row: 10/11;
+}
+
+.avgDayProfit {
+    font-size: 1.2rem;
+    grid-column: 2/3;
+    grid-row: 9/10;
+}
+.avgDayProfitGreen {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 10/11;
+    color: green;
+}
+.avgDayProfitRed {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 10/11;
+    color: red;
+}
+
+.avgROI {
+    font-size: 1.2rem;
+    grid-column: 2/3;
+    grid-row: 7/8;
+}
+.avgROINumberGreen {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 8/9;
+    color: green;
+}
+.avgROINumberRed {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 8/9;
+    color: red;
+}
+
+.avgTime {
+    font-size: 1.2rem;
+    grid-column: 1/2;
+    grid-row: 7/8;
+}
+.avgTimeNumber {
+    font-size: 2.5rem;
+    grid-column: 1/2;
+    grid-row: 8/9;
+}
+
+.avgW {
+    font-size: 1.2rem;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.avgWnumber {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 4/5;
+    color: green;
+}
+
+.PL {
+    font-size: 1.2rem;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.plNumberGreen {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    color: green;
+}
+.plNumberRed {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    color: red;
+}
+
+.required {
+    font-size: 1.2rem;
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+.requiredNumber {
+    font-size: 2.5rem;
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+
+.avgL {
+    font-size: 1.2rem;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.avgLnumber {
+    font-size: 2.5rem;
+    grid-column: 1/2;
+    grid-row: 4/5;
+    color: red;
+}
+
+.winlossP {
+    font-size: 1.2rem;
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+.winlosspercentGreen {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 6/7;
+    color: green;
+}
+.winlosspercentRed {
+    font-size: 2.5rem;
+    grid-column: 2/3;
+    grid-row: 6/7;
+    color: red;
+}
+.winlossR {
+    font-size: 1.2rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.winlossrate {
+    font-size: 2.5rem;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    /* background: linear-gradient(90deg, green 40%, red 100%);
+     */
+    /* background: linear-gradient(to right, green 55%, red 55%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.Winners-filter:hover,
+.All-filter:hover,
+.Losers-filter:hover {
+    background-color: lightcoral;
+}
+.Winners-filter {
+    grid-area: winners;
+    outline: none;
+    border: none;
+}
+.All-filter {
+    grid-area: allf;
+    outline: none;
+    border: none;
+}
+.Losers-filter {
+    grid-area: losers;
+    outline: none;
+    border: none;
+}
+
+.history-display {
+    grid-area: display;
+}
+.history-info > * {
+    font-size: 1.2rem;
+}
+.history-info {
+    margin-top: 1rem;
+    grid-area: display;
+
+    color: white;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr) 2fr;
+    grid-template-rows: 0.2fr 6fr;
+    grid-template-areas:
+        "side date tick buy sell shares time pl roi note "
+        "display display display display display display display display display display";
+    /* place-items: center; */
+    overflow-y: scroll;
+}
+
+.history-Side {
+    grid-area: side;
+    text-align: center;
+}
+.history-Date {
+    grid-area: date;
+    text-align: center;
+}
+.history-Ticker {
+    grid-area: tick;
+    text-align: center;
+}
+.history-Buy {
+    grid-area: buy;
+    text-align: center;
+}
+.history-Sell {
+    grid-area: sell;
+    text-align: center;
+}
+.history-Shares {
+    grid-area: shares;
+    text-align: center;
+}
+.history-Total {
+    grid-area: time;
+    text-align: center;
+}
+.history-P {
+    grid-area: pl;
+    text-align: center;
+}
+.history-ROI {
+    grid-area: roi;
+    text-align: center;
+}
+.history-Notes {
+    grid-area: note;
+    width: 100%;
+    /* text-align: center; */
+    /* overflow: hidden; */
+    /* background-color: red; */
+}
+
+.alter1 {
+    background-color: #ccc;
+    border-radius: 0.5rem;
+    color: black;
+}
+.alter0 {
+    background-color: #555;
+    border-radius: 0.5rem;
+}
+.history-items {
+    height: 10vh;
+    grid-area: display;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr) 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "side date tick buy sell shares time pl roi note ";
+
+    /* place-items: center; */
+    margin: 0.5rem 0rem;
+    /* height: 100px; */
+}
+
+.left {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    /* padding-right: 0.5rem; */
+}
+
+.symbol-history,
+.date-history,
+.buy-history,
+.sell-history,
+.shares-history,
+.time-history,
+.submit-history {
+    /* font-size: rem; */
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.side-history {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* place-items: center; */
+}
+.side-history > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 1.2.5rem;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+.side-history input {
+    height: 100%;
+    width: 15%;
+}
+
+.submit-history:hover {
+    background-color: lightcoral;
+}
+.submit-history {
+    outline: none;
+    border: none;
+    grid-area: submit;
+}
+.symbol-history {
+    grid-area: symbol;
+}
+.date-history {
+    grid-area: date;
+}
+.buy-history {
+    grid-area: buy;
+}
+.sell-history {
+    grid-area: sell;
+}
+.shares-history {
+    grid-area: shares;
+}
+.time-history {
+    grid-area: time;
+}
+.note-history {
+    grid-area: note;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+}
